@@ -25,5 +25,7 @@ JavaScript allows you to work with three primitive data types:-
  - Variables are declared with the <b>var</b> keyword , eg. var money; 
  - You can also declare multiple variables with the same var keyword, eg. var money, name;
  - Storing a value in a variable is called variable <b>initialization</b>.
- - 
-   
+ - You can assign a value at the time of initialization. Eg, var money; and then 'money = 200.50;' below that
+
+
+
