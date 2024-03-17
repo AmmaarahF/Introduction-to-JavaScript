@@ -67,29 +67,29 @@ Functions
 -------------
 Example
 -------------
-// Function assigned to a variable
-const add = function(a, b) {
-  return a + b;
+// Function assigned to a variable<br>
+const add = function(a, b) {<br>
+  return a + b;<br>
 };
-
-// Function passed as an argument
-function operate(num1, num2, operation) {
-  return operation(num1, num2);
-}
-
-// Using the operate function with the add function
-const result = operate(5, 3, add);
-console.log(result); // Output: 8
-
-// Function returning another function
-function createMultiplier(factor) {
-  return function(num) {
-    return num * factor;
-  };
-}
-
-const double = createMultiplier(2);
-console.log(double(5)); // Output: 10
+<br>
+// Function passed as an argument<br>
+function operate(num1, num2, operation) {<br>
+  return operation(num1, num2);<br>
+}<br>
+<br>
+// Using the operate function with the add function<br>
+const result = operate(5, 3, add);<br>
+console.log(result); // Output: 8<br>
+<br>
+// Function returning another function<br>
+function createMultiplier(factor) {<br>
+  return function(num) {<br>
+    return num * factor;<br>
+  };<br>
+}<br>
+<br>
+const double = createMultiplier(2);<br>
+console.log(double(5)); // Output: 10<br>
 
 
 Booleans
