@@ -94,4 +94,18 @@ console.log(double(5)); // Output: 10<br>
 
 Booleans
 ------------------------------
-- is a data type representing true or false values. They often used in conditional statement
+- is a data type representing true or false values. They often used in conditional statementments, comparison and logical operators.
+- Conditional statements like if, else if, and else evaluate expressions that result in boolean values, determining the flow of program execution based on whether those expressions evaluate to true or false. Additionally, boolean values are commonly used in logical operations such as AND (&&), OR (||), and NOT (!). Understanding how to use booleans effectively in conditionals and logical operations is fundamental for writing robust JavaScript code.
+- Booleans are also used as flags to control program behavior and to represent the state of conditions or switches within your code.
+  
+  Example
+  --------------------
+
+let isRaining = true; // Boolean variable representing whether it's raining or not <br>
+
+if (isRaining) {<br>
+  console.log("Remember to bring an umbrella!");<br>
+} else {<br>
+  console.log("No need for an umbrella today.");<br>
+}<br>
+
