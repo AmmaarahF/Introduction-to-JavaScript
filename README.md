@@ -109,3 +109,77 @@ if (isRaining) {<br>
   console.log("No need for an umbrella today.");<br>
 }<br>
 
+
+Type Conversions
+-------------------------
+String Conversion
+-------------------
+- string conversion happens when we need the string form of a value
+- alert(value) shows the value
+- call String(value) function to concert a value to a string
+  > eg. let value = true;<br>
+    alert(typeofvalue);// boolean<br>
+    value = String(value);
+
+Example
+------------------
+A false become "false", null becomes "null", etc
+
+<br>
+
+Numeric Conversion
+--------------------------
+- Numeric conversion happens in math functions and expressions automatically
+
+Example
+---------------
+When division is applied to non-number: <br>
+alert("6"/"2");//3
+<br>
+
+
+To explicitly convert a value to a number: <br>
+
+Example
+-----------
+let str = "123";<br>
+alert(typeofstr);//String<br>
+let num = Number(str); //123<br>
+alert(typeofnum); //number<br>
+<br>
+
+- if the string is not a value number, the result of such a conversion is NaN.//conversion failed
+<br>
+
+Number conversion rules:
+----------------------------
+undefined = NaN<br>
+null = 0 <br>
+true or false = 1 and 0<br>
+String = NaN<br>
+
+Example
+--------------
+alert(Number("123"));//123 <br>
+alert(Number("123z"));//NaN <br>
+alert(Number(true));//1 <br>
+alert(Number(false));//2 <br>
+
+Boolean Conversion
+---------------------------------
+Conversion rule:
+- Values that are intuitively "empty" like ) or an empty string an empty string, null, undefined, and NaN, become false.
+- other values become true
+
+Example
+--------------------------
+alert(Boolean(0));// false<br>
+alert(Boolean("hello"));//true<br>
+alert(Boolean("")); // false<br>
+alert(Boolean("0"));// true<br>
+
+
+The Document Object Model Revisited
+---------------------------------------------------
+The Document Object Model and JavaScript Syntax
+------------------------------------------------------
