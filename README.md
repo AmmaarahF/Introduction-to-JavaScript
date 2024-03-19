@@ -192,8 +192,24 @@ The Document Object Model and JavaScript Syntax
 
 <b>OBJECT</b>
 - In JavaScript, objects can be either scriptable HTML elements within a webpage or core objects that are not tied to HTML elements but are part of the language itself. Additionally, homemade objects can be created by developers. Both core and homemade objects are part of the JavaScript Object Model.<br>
-The follo
+The following are some of the JavaScript objects:<br>
+- window
+- document
+- form
+- image
 
 <b>PROPERTY</b>
 - In JavaScript, objects have properties, similar to HTML tag attributes, representing their characteristics. However, unlike HTML attributes, JavaScript properties can also be objects themselves. This means they can have their own properties and methods. For example, a document, form, or image, while properties of other objects like the window or document, are also considered objects themselves. It's important to recognize these dual identities and treat them as objects to understand their capabilities fully.
+<br>
 
+<b>Method</b>
+- In web development, methods are actions that directly affect objects, such as HTML documents. These actions enable dynamic interactions with users, creating a meaningful and engaging experience that would otherwise be static and one-sided.
+<br>
+Method Parameters<br>
+- Methods in JavaScript are indicated by parentheses immediately following their name, such as "alert()". These parentheses may contain parameters, which are necessary for the method to perform its task. Parameters provide information to the method. For example, the alert() method displays an alert box. Without a parameter, the alert method would produce a meaningless dialog box. However, with a parameter like alert("Hello World"), it communicates a specific message to the user.
+
+Here are a Few JavaScript Methods:
+
+- alert() causes an alert dialog box to appear over the page that launched it
+- write() writes content to a page
+- focus() causes the mouse cursor to be inserted into a form element
