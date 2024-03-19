@@ -213,3 +213,35 @@ Here are a Few JavaScript Methods:
 - alert() causes an alert dialog box to appear over the page that launched it
 - write() writes content to a page
 - focus() causes the mouse cursor to be inserted into a form element
+
+Core APIs in the DOM
+-------------------------------------
+- document and window objects are the objects whose interfaces you generally use most often in DOM programming.
+- the window object represents something like the browser, and the document object is the root of the document itself.
+- The following is a brief list of common APIs in web and XML page scripting using the DOM.
+
+> document.getElementById(id)<br>
+> document.getElementsByTagName(name)<br>
+> document.createElement(name)<br>
+> parentNode.appendChild(node)<br>
+> element.innerHTML<br>
+> element.style.left<br>
+> element.setAttribute<br>
+> element.getAttribute<br>
+> element.addEventListener<br>
+> window._content<br>
+> window.onload<br>
+> window.dump()<br>
+> window.scrollTo()<br>
+<br>
+
+JavaScript Function
+-------------------------
+- A function is a subprogram designed to perform a particular task.
+- A function will only execute if and only when it has been called (invoking a function).
+- Values can be passed into functions and used within that function as well.
+- All functions have a return value, otherwise they become undefined
+- function is an <b>object (an HTML element, with properties and methods.</b>
+<br>
+<b>Calling one function from another function</b>
+- 
