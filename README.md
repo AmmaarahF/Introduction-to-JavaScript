@@ -183,3 +183,17 @@ The Document Object Model Revisited
 ---------------------------------------------------
 The Document Object Model and JavaScript Syntax
 ------------------------------------------------------
+- The Document Object Model is an Application Programming Interface (API) for HTML and XML documents.
+- it provides a structural representation of the document
+- it defines the way that that structure is to be accessed from script
+ > This allows you to get at the web page as a structured group of nodes. Essentially, it connects web pages to scripts or programming languages.
+- The JavaScript syntax has to do with objects.
+-  To access an object, property, or method, its reference must include every object that contains it, separated by a dot. This is called the <b>"dot syntax".</b>
+
+<b>OBJECT</b>
+- In JavaScript, objects can be either scriptable HTML elements within a webpage or core objects that are not tied to HTML elements but are part of the language itself. Additionally, homemade objects can be created by developers. Both core and homemade objects are part of the JavaScript Object Model.<br>
+The follo
+
+<b>PROPERTY</b>
+- In JavaScript, objects have properties, similar to HTML tag attributes, representing their characteristics. However, unlike HTML attributes, JavaScript properties can also be objects themselves. This means they can have their own properties and methods. For example, a document, form, or image, while properties of other objects like the window or document, are also considered objects themselves. It's important to recognize these dual identities and treat them as objects to understand their capabilities fully.
+
