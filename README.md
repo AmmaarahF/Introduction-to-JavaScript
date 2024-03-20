@@ -243,5 +243,71 @@ JavaScript Function
 - All functions have a return value, otherwise they become undefined
 - function is an <b>object (an HTML element, with properties and methods.</b>
 <br>
-<b>Calling one function from another function</b>
-- 
+<b>Calling one function from another function</b><br>
+<br>
+- Functions in JavaScript can be nested, meaning you can call one function from within another. This allows you to create separate functions, each performing a specific task, and then run them together as a complete process, one after the other. For instance, you can have a function that calls three other functions, each returning a string of text that has been altered in some way.
+<br>
+<br>
+<b>Creating objects with user-defined functions</b><br>
+<br>
+- JavaScript is object-based, with elements like the window, links, forms, and the browser itself treated as objects. Utilizing objects can simplify programming tasks. You can create custom objects in JavaScript by using functions in a modified way, offering flexibility and organization to your code.<br>
+<br>
+Making a new object entails two steps:-<br>
+- Define the object in a user-defined function
+- Use the new keyword to create the object with a call to the object function<br>
+<br>
+ <b> Example of the world's simplest user-defined JavaScript object:</b><br>
+
+ ret = new makeSimpleObject(); //creates the new object <br>
+
+ function makeSimpleObject() {} // this part defines the object<br>
+<br>
+You can use the same object function to create any number of new objects. For instance, these lines create four new and separate objects: eenie, meenie, minie, and moe:<br>
+eenie = new makeSimpleObject();<br>
+meenie = new makeSimpleObject(); <br>
+...and so on<br>
+
+<br>
+<b>Defining new properties to already-made objects</b><br>
+- After an object has been created you can assign a value to it.<br>
+- To create a new property and assign a value to it, simply write a variable expression like this:-<br>
+<br>
+myobject.property = value; <br>
+- myobject is the name of the user-defined object.<br>
+- property is the name of the property you want to create.<br>
+- value is the value you want to assign.<br>
+<br>
+<br>
+- Suppose you create an object called "customer" and you want to define three properties to it: name, address, and phone. Here's one way to do it:-<br>
+customer = new makeSimpleObject();<br>
+customer.name = "Fred";<br>
+customer.address = "123 Main Street";<br>
+customer.phone = "555-1212";<br>
+<br>
+function makeSimpleObject(){<br>
+  return(this);<br>
+}<br>
+To call: <br>
+alert(customer.name);<br>
+<br>
+
+Operators
+----------------------
+- Assignment operators<br>
+- Comparison operators<br>
+- Arithmetic operators<br>
+- Bitwise operators<br>
+- Logical operators<br>
+- String operators<br>
+- Conditional (ternary) operator<br>
+- Comma operator<br>
+- Unary operators<br>
+- Relational operators<br>
+<br>
+
+Assignment Operators
+-------------------------------
+<b>Return value and chaining</b><br>
+- An assignment operator assigns a value to its left operand based on the value of its right operand.<br>
+-  The simple assignment operator is equal (=), which assigns the value of its right operand to its left operand. <br>
+
