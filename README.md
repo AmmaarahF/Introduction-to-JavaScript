@@ -309,5 +309,71 @@ Assignment Operators
 -------------------------------
 <b>Return value and chaining</b><br>
 - An assignment operator assigns a value to its left operand based on the value of its right operand.<br>
--  The simple assignment operator is equal (=), which assigns the value of its right operand to its left operand. <br>
+- The simple assignment operator is equal (=), which assigns the value of its right operand to its left operand. <br>
+
+Comparison Operators 
+--------------------------------
+- JavaScript comparison operators compare operands and return a logical value based on the comparison's truth.
+-  Operands can be numeric, string, logical, or object values. Strings are compared based on lexicographical ordering using Unicode values.
+-  JavaScript usually converts operands to compatible types for comparison, except for === and !== operators, which perform strict equality checks without type conversion.
+<br>
+Arithmetic operators
+---------------------------------
+- An arithmetic operator takes numerical values (either literals or variables) as their operands and returns a single numerical value.
+- The standard arithmetic operators are addition (+), subtraction (-), multiplication (*), and division (/).
+<br>
+
+Bitwise Operators
+---------------------------------
+- A bitwise operator treats their operands as a set of 32 bits (zeros and ones), rather than as decimal, hexadecimal, or octal numbers.
+- Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.
+  <br>
+  
+Bitwise AND - a&b //Returns a one in each bit position for which the corresponding bits of both operands are ones. <br>
+
+Bitwise OR - a|b // Returns a zero in each bit position for which the corresponding bits of both operands are zeros. <br>
+
+Bitwise XOR - a ^ b// Returns a zero in each bit position for which the corresponding bits are the same. 
+[Returns a one in each bit position for which the corresponding bits are different.]
+<br>
+
+Bitwise NOT - ~a // Inverts the bits of its operand.
+<br>
+
+Left shift - a >>> b //Shifts a in binary representation b bits to the right, discarding bits shifted off. 
+<br>
+
+Zero-fill right shift - a >>> b // Shifts a in binary representation b bits to the right, discarding bits shifted off, and shifting in zeros from the left. 
+
+
+The Document Object Model
+---------------------------------------
+<b>Event Bubbling</b>
+
+- Bubbling is what the event itself does.
+- The event starts at the element that triggered it (Clicking 1. Element button, An Event Listener would be attached to each element).
+- Then, it bubbles up to each of it’s parent elements until it reaches the document
+-  Any listeners on any of those parent elements would get triggered as it bubbles up.
+-  Causing all the events to occur on the page possibly slowing down your application.
+-  That e.stopPropagation() halts this “bubbling” of events “up” through the DOM. We stop all the events from the parents occurring. 
+
+
+Regular Expressions
+--------------------------------------
+- A regular expression is a sequence of characters that forms a search pattern.
+- When you search for data in a text, you can use this search pattern to describe what you are searching for.
+- A regular expression can be a single character, or a more complicated pattern.
+- Regular expressions can be used to perform all types of text search and text replace operations.
+
+Example 
+var patt = /w3schools/i; 
+
+Example explained: 
+
+/w3schools/i  is a regular expression. 
+
+w3schools  is a pattern (to be used in a search). 
+
+i  is a modifier (modifies the search to be case-insensitive). 
+
 
