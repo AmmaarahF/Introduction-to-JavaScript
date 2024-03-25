@@ -372,6 +372,52 @@ Example explained:
 
 /w3schools/i  is a regular expression. 
 
+Week 3
+--------------------
+Strings Operations
+------------------
+Creating strings
+------------------
+- Strings can be created as primitives, from string literals, or as objects, using the String() constructor: <br>
+eg. const string = "A string primitive"; <br>
+const string2 = "new String("A String object");
+<br>
+- String primitives and string objects can be used interchangeably in most situations.
+- String literals can be specified using single or double quotes, which are treated identically, or using the backtick character ` .
+  >  This last form specifies a template literal: with this form you can interpolate expressions.
+<br>
+- There are two ways to access an individual character in a string. The first is the charAt() method:<br>
+>  return 'cat'.charAt(1) // returns "a"
+
+- The other way is to treat the string as an array-like object, where individual characters correspond to a numerical index: <br>
+> return 'cat'[1] //returns "a"
+
+- When using bracket notation for character access, attempting to delete or assign a value to these properties will not succeed.
+
+-In C, the strcmp() function is used for comparing strings. In JavaScript, you just use the less-than and greater-than operators: <br>
+> let a = 'a' <br>
+  let b = 'b' <br>
+
+> if (a<b) { //true <br>
+    console.log(a + ' is less than ' + b)}<br>
+    else if (a > b) { console.log(a + ' is greater than ' + b)}<br>
+    else{ console.log(a + 'and' + b + ' are equal.')}
+<br> 
+
+- A similar result can be achieved using the localeCompare() method inherited by String instances.
+- Note that a == b compares the strings in a and b for being equal in the usual case-sensitive way.
+- To compare without regard to upper or lower case characters, use a function similar to this: <br>
+> function isEqual(str1, str2){
+  return str1.toUpperCase() === str2.toUpperCase()} //isEqual
+ <br>
+- JavaScript distinguishes between String objects and primitive string values, similarly for Booleans and Numbers.
+- String literals (enclosed in double or single quotes) and strings returned from String calls in a non-constructor context are considered primitive strings.
+- JavaScript automatically converts primitives to String objects, enabling the use of String object methods for primitive strings.
+- In contexts where a method is invoked on a primitive string or a property lookup occurs, JavaScript automatically wraps the string primitive and performs the method call or property lookup.
+> eg. let s_prim = 'foo'<br>
+      let s_obj = new String(s_prim)<br>
+      console.log(typeof s_prim) // logs "string"console.log(typeof s_obj) // logs"object"
+
 w3schools  is a pattern (to be used in a search). 
 
 i  is a modifier (modifies the search to be case-insensitive). 
