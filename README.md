@@ -372,6 +372,10 @@ Example explained:
 
 /w3schools/i  is a regular expression. 
 
+w3schools  is a pattern (to be used in a search). 
+
+i  is a modifier (modifies the search to be case-insensitive). 
+
 Week 3
 --------------------
 Strings Operations
@@ -411,15 +415,196 @@ const string2 = "new String("A String object");
   return str1.toUpperCase() === str2.toUpperCase()} //isEqual
  <br>
 - JavaScript distinguishes between String objects and primitive string values, similarly for Booleans and Numbers.
+  
 - String literals (enclosed in double or single quotes) and strings returned from String calls in a non-constructor context are considered primitive strings.
+  
 - JavaScript automatically converts primitives to String objects, enabling the use of String object methods for primitive strings.
+  
 - In contexts where a method is invoked on a primitive string or a property lookup occurs, JavaScript automatically wraps the string primitive and performs the method call or property lookup.
 > eg. let s_prim = 'foo'<br>
       let s_obj = new String(s_prim)<br>
       console.log(typeof s_prim) // logs "string"console.log(typeof s_obj) // logs"object"
 
-w3schools  is a pattern (to be used in a search). 
 
-i  is a modifier (modifies the search to be case-insensitive). 
+- String primitives and String objects also give different results when using eval().
+- Primitives passed to eval are treated as source code; String objects are treated as all other objects are, by returning the object.
+  > eg. let s1 = '2 + 2' //creates a string primitive <br>
+  > let s2 = new String('2 + 2') //creates a String object  <br>
+  > console.log(eval(s1)) //returns the number 4 <br>
+  > console.log(eval(s2)) //returns the string "2 + 2" <br>
+
+- For these reasons, the code may break when it encounters String objects when it expects a primitive string instead
+-  A String object can always be converted to its primitive counterpart with the valueOf() method.
+  > eg. console.log(eval(s2.valueOf())) //returns the number 4
+  
+
+
+On-event Handlers
+------------------------------
+- DOM elements offer on-event handlers to manage how they react to events.
+- Events can include actions like clicking, key presses, focus changes, etc.
+- Elements can be interactive (e.g., links, buttons, forms) or non-interactive (e.g., the base document).
+- The on-event handler is typically named according to the event it's designed to react to, such as onclick, onkeypress, onfocus, etc.
+
+You can specify an on<...> event handler for a particular event (such as click) for a given object in different ways:
+
+- Using an HTML attribute named on{eventtype} on an element, for example:
+<button onclick="return handleClick(event);">,
+- Or by setting the corresponding property from JavaScript, for example:
+document.getElementById("mybutton").onclick = function(event) { ... }.
+
+- Each object can have only one on-event handler for a specific event, although this handler can call multiple sub-handlers.
+- addEventListener() is often preferred for event handling as it allows multiple event handlers to be applied independently for the same event and/or element.
+- on-event handlers are automatically called, not at the programmer's discretion, although they can be invoked directly using syntax like mybutton.onclick(myevent);.
+- on-event handlers serve as placeholders to which real handler functions can be assigned.
+
+Event handler’s parameters, this binding, and the return value
+--------------------------------------------------------------------------
+When the event handler is specified as an HTML attribute, the specified code is wrapped into a function with the following parameters:- <br>
+
+- event - for all event handlers, except onerror.
+- event, source, lineno, colno, and error for the onerror event handler.
+
+> Note that the event parameter actually contains the error message as a string.
+
+- When an event handler is invoked, the `this` keyword inside the handler refers to the DOM element on which the handler is registered.
+  
+- The return value from the handler determines whether the event is cancelled.
+  
+- The handling of the return value depends on the type of event, with detailed specifications outlined in "The event handler processing algorithm" in the HTML specification.
+
+The term event handler may be used to refer to:- <br>
+
+- any function or object registered to be notified of events,
+- or, more specifically, to the mechanism of registering event listeners via on... attributes in HTML or properties in web APIs, such as <button onclick="alert(this)"> or window.onload = function() { /* ... */ }.
+
+- the EventTarget method addEventListener() sets up a function that will be called whenever the specified event is delivered to the target.
+- Common targets include Element, Document, and Window, but any object supporting events can be a target.
+- addEventListener() operates by appending a function or an object implementing EventListener to the list of event listeners for the specified event type on the EventTarget where it's invoked.
+<br>
+
+> target.addEventListener(type, listener[, options]);
+
+
+> target.addEventListener(type, listener[, useCapture]);
+
+
+Event handlers specific rules
+--------------------------------------------
+- Certain event handler attributes have specific rules: -
+- They must be supported by all HTML elements except for body and frameset elements.
+- These attributes function both as event handler content attributes and event handler IDL attributes.
+- They must be supported by all Document objects solely as event handler IDL attributes.
+- They must be supported by all Window objects as event handler IDL attributes directly on the Window objects themselves.
+- Corresponding event handler content attributes and event handler IDL attributes are exposed on all body and frameset elements owned by the Window object's Documents.
+
+Event Handlers for All HTML5 Elements & document & window Objects
+---------------------------------------------------------------------
+- onclick - Invoked when the user clicked on the object.<br>
+- onabort - Invoked when an event has been aborted.
+- oninvalid - invalid event handler.
+- onshow - 	show event handler.
+
+
+Dynamic HTML
+-------------------------
+- Dynamic HTML (DHTML) involves combining CSS and JavaScript with HTML to create dynamic web pages.
+- Events drive changes to website features, ranging from simple text font, color, and style alterations to dynamically altering page content and moving objects around the page.
+- CSS facilitates the styling and layout aspects of the page, allowing for visual enhancements and modifications.
+- JavaScript adds interactivity and dynamic behavior to the webpage, enabling responses to user actions and events.
+- Through DHTML, web pages can evolve dynamically, providing richer and more engaging user experiences.
+
+HTML objects can be changed in two ways:-
+
+- Changing the class of the object - thereby changing the style of the object
+- Using the style property of the object to change the style.
+
+
+JavaScript functions can be designed in various ways:- 
+
+- Directly referencing an object in the function using its id value. This allows for changing the style of only that specific object.
+- Passing an object id as an argument to the JavaScript function, enabling the style of any object to be changed.
+- Accessing an object using the event to determine the object in which the event occurred, allowing for dynamic handling based on user interaction.
+
+
+Date Object
+------------------
+- The Date object is a built-in object in JavaScript that stores the date and time.
+- It provides a number of built-in methods for formatting and managing that data.
+- When instantiated without arguments, a new Date instance represents the current date and time.
+- The current date and time are determined by the computer's system settings.
+- The Date object created reflects the current system's date and time accurately.
+- This default behavior allows easy access to the current date and time within JavaScript applications.
+
+> const now = new Date(); // Wed Oct 18 2017 12:41:34 GMT+0000 (UTC)
+
+- <b>Epoch time</b>, or zero time, refers to the date string "01 January, 1970 00:00:00 Universal Time (UTC)" and is represented by the timestamp 0.
+- In JavaScript, we can test epoch time by creating a new variable and assigning it a Date instance based on a timestamp of 0.
+- This Date instance represents the epoch time and serves as a reference point for measuring time intervals in JavaScript.
+- The epoch time concept is widely used in computing for representing and calculating time durations, especially in systems that utilize Unix time.
+
+- We can use these set methods to modify one, more, or all of the components of a date.
+
+Keyboard Events
+--------------------------
+Here are some of the most important keyboard events and their event handler:-
+
+Keydown Event (onkeydown):
+
+- Occurs when a user presses down a key on the keyboard.
+- Handled with the onkeydown event handler.
+- Example: Displays an alert message when the keydown event occurs.
+
+Keyup Event (onkeyup):
+
+- Occurs when a user releases a key on the keyboard.
+- Handled with the onkeyup event handler.
+- Example: Displays an alert message when the keyup event occurs.
+
+Keypress Event (onkeypress):
+
+- Occurs when a user presses down a key on the keyboard that has a character value associated with it.
+- Certain keys like Ctrl, Shift, Alt, Esc, Arrow keys, etc., do not generate a keypress event but generate keydown and keyup events.
+- Handled with the onkeypress event handler.
+- Example: Displays an alert message when the keypress event occurs.
+
+
+Form Events
+--------------------
+- A form event is fired when a form control receives or loses focus or when the user modify a form control value, such as by typing text in a text input, select any option in a select box etc.
+
+
+Here are some of the most important form events and their event handlers- 
+
+Focus Event (onfocus):
+
+- Occurs when a user gives focus to an element on a web page.
+- Handled with the onfocus event handler.
+- Example: Highlights the background of a text input in yellow color when it receives focus.
+
+  
+Blur Event (onblur):
+
+- Occurs when the user takes focus away from a form element or window.
+- Handled with the onblur event handler.
+- Example: Displays an alert message when a text input element loses focus.
+  
+Change Event (onchange):
+
+- Occurs when a user changes the value of a form element.
+- Handled with the onchange event handler.
+- Example: Displays an alert message when an option in a select box is changed.
+  
+Submit Event (onsubmit):
+
+- Occurs only when the user submits a form on a web page.
+- Handled with the onsubmit event handler.
+- Example: Displays an alert message while submitting the form to the server.
+
+
+
+
+
+
 
 
