@@ -606,5 +606,125 @@ Submit Event (onsubmit):
 
 
 
+Document/Window Events
+---------------------------------
+- Events are also triggered in situations when the page has loaded or when the user resizes the browser window, etc. 
 
 
+Here are some of the most important document/window events and their event handlers:-
+
+
+Load Event (onload):
+
+- Occurs when a web page finishes loading in the browser.
+- Handler: onload event handler.
+- Example: Alert message displayed upon page load completion.
+
+Unload Event (onunload):
+
+- Occurs when a user leaves the current web page.
+- Handler: onunload event handler.
+- Example: Alert message triggered when attempting to leave the page.
+
+
+Resize Event (onresize):
+
+- Occurs when the browser window is resized, including minimization or maximization.
+- Handler: onresize event handler.
+- Example: Alert message displayed upon resizing the browser window to a new width and height.
+
+
+Creating an Image Slider
+---------------------------------
+
+eg . code in javaScript on how to create a slideshow 
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+function nextSlide() {
+  slideIndex++;
+  showSlides();
+}
+
+function prevSlide() {
+  slideIndex--;
+  showSlides();
+}
+
+
+
+
+Program Flowcharts
+---------------------------
+Purpose of Program Flowchart:
+
+- Illustrates the logic of a program.
+- Provides details on manipulating data.
+- Helps in understanding and designing the program's structure.
+
+Design Process:
+
+- Occurs after analyzing a problem or opportunity.
+- Results in the creation of a program flowchart.
+  
+Benefits:
+
+- Facilitates determining, arranging, and rearranging complex logic.
+- Helps in identifying errors and correcting them before implementation.
+- Aids in easy and efficient maintenance of the program.
+- Essential for making modifications to the program.
+
+Cost-effectiveness:
+
+- It is less costly to determine, arrange, and rearrange complex logic on a flowchart than to correct logic errors in an implemented program.
+
+
+Javascript For Loop
+----------------------------
+Loops can execute a block of code a number of times and are handy if you want to run the same code over and over again, each time with a different value.
+
+Often this is the case when working with arrays:
+
+Instead of writing:
+text += cars[0] + " 1 ";
+
+text += cars[1] + " 1 ";
+
+text += cars[2] + " 1 ";
+
+text += cars[3] + " 1 ";
+
+text += cars[4] + " 1 ";
+
+text += cars[5] + " 1 ";
+
+You can write:
+var i;
+
+for (i = 0; i < cars.length; i++) {
+
+  text += cars[i] + " 1 ";
+
+} 
+
+JavaScript supports different kinds of loops:
+
+- for - loops through a block of code a number of times
+- for/in - loops through the properties of an object
+- for/of - loops through the values of an iterable object 
+- while - loops through a block of code while a specified condition is true
+- do/while - also loops through a block of code while a specified condition is true
